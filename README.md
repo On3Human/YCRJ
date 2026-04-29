@@ -2,8 +2,6 @@
 
 A professional, academic web platform built for the **Youth Computing Research Journal (YCRJ)**. This platform serves as a central hub for student researchers, featuring comprehensive information about the program phases, journal archives, and direct application portals.
 
-Designed with a premium aesthetic—focusing on dark navy, gold accents, and high-quality typography—the site presents an institutional and credible face for the initiative.
-
 ## Key Features
 
 - **Program Details**: Interactive breakdown of the YCRJ phases and structure.
