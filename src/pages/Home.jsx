@@ -36,7 +36,7 @@ const problemStatements = [
 ];
 
 const AnimatedQuote = () => {
-  const words = ["youth", "students", "curious", "builders", "researchers", "peers"];
+  const words = ["youth","researchers"];
   const typingSpeed = 80;
   const deletingSpeed = 50;
   const pauseAfterTyped = 1800;
