@@ -1,16 +1,72 @@
-# React + Vite
+# Youth Computing Research Journal (YCRJ)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, academic web platform built for the **Youth Computing Research Journal (YCRJ)**. This platform serves as a central hub for student researchers, featuring comprehensive information about the program phases, journal archives, and direct application portals.
 
-Currently, two official plugins are available:
+Designed with a premium aesthetic—focusing on dark navy, gold accents, and high-quality typography—the site presents an institutional and credible face for the initiative.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Key Features
 
-## React Compiler
+- **Program Details**: Interactive breakdown of the YCRJ phases and structure.
+- **Journal Archives**: Showcase of past research journals and publications.
+- **Application Portal**: Integrated application forms for prospective students and peer reviewers.
+- **Team & Governance**: Detailed views of the editorial board and team structure.
+- **Premium UI/UX**: Fluid animations and a modern, responsive design system.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technology Stack
 
-## Expanding the ESLint configuration
+- **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Routing**: [React Router v7](https://reactrouter.com/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+Follow these instructions to set up the project locally.
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/On3Human/YCRJ.git
+   cd YCRJ
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:5173` (or the port specified in your terminal).
+
+## 📂 Project Structure
+
+```text
+YCRJ/
+├── public/              # Static assets and redirects
+├── src/
+│   ├── components/      # Reusable UI components (Layout, Navbar, etc.)
+│   ├── pages/           # Page-level components (Home, Program, Apply, etc.)
+│   ├── index.css        # Global styles and Tailwind configuration
+│   ├── App.jsx          # Main application routing
+│   └── main.jsx         # React application entry point
+├── eslint.config.js     # Linter configuration
+├── vite.config.js       # Vite bundler configuration
+└── package.json         # Project dependencies and scripts
+```
+
+## 🏗️ Available Scripts
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the app for production to the `dist` folder.
+- `npm run preview`: Bootstraps a local server to preview the production build.
+- `npm run lint`: Runs ESLint to check for code quality issues.
