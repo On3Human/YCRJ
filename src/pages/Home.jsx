@@ -35,44 +35,62 @@ const problemStatements = [
   "Missed downstream graduate school and internship opportunities"
 ];
 
-const Typewriter = ({ text, delay = 150, pause = 2000 }) => {
+const AnimatedQuote = () => {
+  const words = ["youth", "students", "curious", "builders", "researchers", "peers"];
+  const typingSpeed = 80;
+  const deletingSpeed = 50;
+  const pauseAfterTyped = 1800;
+  const pauseAfterDeleted = 400;
+
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     let timeout;
-    
+    const currentWord = words[currentWordIndex];
+
     if (isDeleting) {
       if (currentText.length > 0) {
         timeout = setTimeout(() => {
           setCurrentText(prev => prev.slice(0, -1));
-        }, delay / 2);
+        }, deletingSpeed);
       } else {
-        setIsDeleting(false);
-        setCurrentIndex(0);
+        timeout = setTimeout(() => {
+          setIsDeleting(false);
+          setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        }, pauseAfterDeleted);
       }
     } else {
-      if (currentIndex < text.length) {
+      if (currentText.length < currentWord.length) {
         timeout = setTimeout(() => {
-          setCurrentText(prev => prev + text[currentIndex]);
-          setCurrentIndex(prev => prev + 1);
-        }, delay);
+          setCurrentText(currentWord.slice(0, currentText.length + 1));
+        }, typingSpeed);
       } else {
         timeout = setTimeout(() => {
           setIsDeleting(true);
-        }, pause);
+        }, pauseAfterTyped);
       }
     }
-    
+
     return () => clearTimeout(timeout);
-  }, [currentIndex, isDeleting, currentText, delay, pause, text]);
+  }, [currentText, isDeleting, currentWordIndex]);
+
+  const AnimatedWord = () => (
+    <span className="text-[#C9A84C] relative inline-block whitespace-nowrap min-w-[3ch]">
+      <span className="relative z-10">{currentText}</span>
+      <span className="animate-pulse font-light ml-[2px] opacity-80 text-[#0A1628] z-10 relative">|</span>
+      <span className="absolute bottom-1 left-0 w-full h-[6px] bg-[#C9A84C]/20 z-0 rounded-sm"></span>
+    </span>
+  );
 
   return (
-    <span className="inline-flex items-center min-w-[3ch]">
-      {currentText}
-      <span className="animate-pulse font-light ml-0.5 opacity-70">|</span>
-    </span>
+    <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#0A1628] leading-tight">
+      The first Youth Computing Research Journal in Egypt <br />
+      run by the <br />
+      <span className="my-2 inline-block"><AnimatedWord /></span> <br />
+      for the <AnimatedWord />.
+    </h2>
   );
 };
 
@@ -116,8 +134,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
             <div>
-              <div className="text-4xl font-serif font-bold text-[#0A1628]">7.5</div>
-              <div className="text-sm font-medium text-gray-500 mt-2 uppercase tracking-wide">Week Curriculum</div>
+              <div className="text-4xl font-serif font-bold text-[#0A1628]">8.5</div>
+              <div className="text-sm font-medium text-gray-500 mt-2 uppercase tracking-wide">Week Curriculum (Phase 1)</div>
             </div>
             <div>
               <div className="text-4xl font-serif font-bold text-[#0A1628]">8</div>
@@ -139,12 +157,7 @@ export default function Home() {
       <section className="bg-gray-50 py-24 border-b border-gray-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Quote className="mx-auto w-12 h-12 text-gray-300 mb-8 fill-current rotate-180" />
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#0A1628] leading-tight">
-            The first Youth Computing Research Journal in Egypt <br />
-            run by the <br />
-            <span className="text-[#C9A84C] my-2 inline-block"><Typewriter text="youth" /></span> <br />
-            for the <span className="text-[#C9A84C]">youth</span>.
-          </h2>
+          <AnimatedQuote />
         </div>
       </section>
 
