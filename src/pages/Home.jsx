@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BookOpen, FlaskConical, PenTool, CheckCircle, ArrowRight } from 'lucide-react';
+import { BookOpen, FlaskConical, PenTool, CheckCircle, ArrowRight, Quote } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card, CardContent } from '../components/ui/Card';
 
@@ -34,6 +34,47 @@ const problemStatements = [
   "Absence of publishing venues specifically for targeted junior computing research",
   "Missed downstream graduate school and internship opportunities"
 ];
+
+const Typewriter = ({ text, delay = 150, pause = 2000 }) => {
+  const [currentText, setCurrentText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeout;
+    
+    if (isDeleting) {
+      if (currentText.length > 0) {
+        timeout = setTimeout(() => {
+          setCurrentText(prev => prev.slice(0, -1));
+        }, delay / 2);
+      } else {
+        setIsDeleting(false);
+        setCurrentIndex(0);
+      }
+    } else {
+      if (currentIndex < text.length) {
+        timeout = setTimeout(() => {
+          setCurrentText(prev => prev + text[currentIndex]);
+          setCurrentIndex(prev => prev + 1);
+        }, delay);
+      } else {
+        timeout = setTimeout(() => {
+          setIsDeleting(true);
+        }, pause);
+      }
+    }
+    
+    return () => clearTimeout(timeout);
+  }, [currentIndex, isDeleting, currentText, delay, pause, text]);
+
+  return (
+    <span className="inline-flex items-center min-w-[3ch]">
+      {currentText}
+      <span className="animate-pulse font-light ml-0.5 opacity-70">|</span>
+    </span>
+  );
+};
 
 export default function Home() {
   return (
@@ -91,6 +132,19 @@ export default function Home() {
               <div className="text-sm font-medium text-gray-500 mt-2 uppercase tracking-wide">Assigned to Papers</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="bg-gray-50 py-24 border-b border-gray-200 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Quote className="mx-auto w-12 h-12 text-gray-300 mb-8 fill-current rotate-180" />
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#0A1628] leading-tight">
+            The first Youth Computing Research Journal in Egypt <br />
+            run by the <br />
+            <span className="text-[#C9A84C] my-2 inline-block"><Typewriter text="youth" /></span> <br />
+            for the <span className="text-[#C9A84C]">youth</span>.
+          </h2>
         </div>
       </section>
 
