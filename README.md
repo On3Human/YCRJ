@@ -4,15 +4,14 @@ A professional, academic web platform built for the **Youth Computing Research J
 
 Designed with a premium aesthetic—focusing on dark navy, gold accents, and high-quality typography—the site presents an institutional and credible face for the initiative.
 
-## 🌟 Key Features
+## Key Features
 
 - **Program Details**: Interactive breakdown of the YCRJ phases and structure.
 - **Journal Archives**: Showcase of past research journals and publications.
 - **Application Portal**: Integrated application forms for prospective students and peer reviewers.
 - **Team & Governance**: Detailed views of the editorial board and team structure.
-- **Premium UI/UX**: Fluid animations and a modern, responsive design system.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
 - **Routing**: [React Router v7](https://reactrouter.com/)
@@ -20,7 +19,7 @@ Designed with a premium aesthetic—focusing on dark navy, gold accents, and hig
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to set up the project locally.
 
@@ -64,7 +63,7 @@ YCRJ/
 └── package.json         # Project dependencies and scripts
 ```
 
-## 🏗️ Available Scripts
+## Available Scripts
 
 - `npm run dev`: Starts the development server.
 - `npm run build`: Builds the app for production to the `dist` folder.
