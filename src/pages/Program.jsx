@@ -8,7 +8,7 @@ export default function Program() {
     { num: 2, title: "Academic & Scientific English", competency: "Precision, clarity, register", duration: "1 week" },
     { num: 3, title: "Paper Structure & Section Writing", competency: "IMRaD writing, section-by-section", duration: "1.5 weeks" },
     { num: 4, title: "LaTeX Document Preparation", competency: "Typesetting, IEEE/ACM templates", duration: "1.5 weeks" },
-    { num: 5, title: "Data Visualization (Matplotlib)", competency: "Publication-quality figures", duration: "1 week" },
+    { num: 5, title: "Data Analysis & Visualization (Matplotlib)", competency: "Publication-quality figures", duration: "2 weeks" },
     { num: 6, title: "Citations & Academic Integrity", competency: "Citation styles, plagiarism, Zotero", duration: "0.5 week" },
     { num: 7, title: "Research Pathways & Opportunities", competency: "Grad school, open-source, competitions", duration: "0.5 week" },
     { num: 8, title: "Formative Assessment", competency: "Completion check, progression gate", duration: "0.5 week" },
@@ -40,7 +40,7 @@ export default function Program() {
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Program Structure</h1>
           <p className="text-xl text-gray-300 font-sans">
-            A sequential, interdependent 14-17 week pathway. Each phase has defined learning outcomes, deliverables, constraints, and assessment criteria.
+            A sequential, interdependent 14-18 week pathway where they engage in two contact sessions and 2 hours of peer sessions weekly. Each phase has defined learning outcomes, deliverables, constraints, and assessment criteria.
           </p>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function Program() {
             <div className="bg-[#C9A84C] text-[#0A1628] font-bold text-xl w-10 h-10 rounded mr-4 flex items-center justify-center">1</div>
             <div>
               <h2 className="text-3xl font-serif font-bold text-[#0A1628]">Phase 1: Foundational Program</h2>
-              <p className="text-gray-500 font-medium">Duration: 7.5 Weeks • Goal: Literacy & Tool Competency</p>
+              <p className="text-gray-500 font-medium">Duration: 8.5 Weeks • Goal: Literacy & Tool Competency</p>
             </div>
           </div>
           
